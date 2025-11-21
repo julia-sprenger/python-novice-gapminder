@@ -11,7 +11,7 @@
 carpentry: 'swc'
 
 # Overall title for pages.
-title: 'Plotting and Programming in Python'
+title: 'Plotting and Programming in Python at the OECD'
 
 # Date the lesson was created (YYYY-MM-DD, this is empty by default)
 created: '2016-01-07'
@@ -21,13 +21,13 @@ keywords: 'software, data, lesson, The Carpentries'
 
 # Life cycle stage of the lesson
 # possible values: pre-alpha, alpha, beta, stable
-life_cycle: 'stable'
+life_cycle: 'beta'
 
 # License of the lesson materials (recommended CC-BY 4.0)
 license: 'CC-BY 4.0'
 
 # Link to the source repository for this lesson
-source: 'https://github.com/swcarpentry/python-novice-gapminder'
+source: 'https://github.com/julia-sprenger/python-novice-gapminder'
 
 # Default branch of your lesson
 branch: 'main'
