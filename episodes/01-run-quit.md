@@ -118,6 +118,7 @@ Jupyter notebooks mix code and text in different types of blocks, called cells. 
 A "code cell" in a Notebook is a cell that contains software;
 a "text cell" is one that contains ordinary prose written for human beings.
 
+::::::::::::::::::::::::::::::::::::::::::::::::::
 
 ## The Notebook has Command and Edit modes.
 
