@@ -119,8 +119,6 @@ A "code cell" in a Notebook is a cell that contains software;
 a "text cell" is one that contains ordinary prose written for human beings.
 
 
-::::::::::::::::::::::::::::::::::::::::::::::::::
-
 ## The Notebook has Command and Edit modes.
 
 - If you press <kbd>Esc</kbd> and <kbd>Return</kbd> alternately, the outer border of your code cell will change from highlighting the cell itself to highlighting the cell content.
@@ -133,8 +131,6 @@ a "text cell" is one that contains ordinary prose written for human beings.
   - The <kbd>z</kbd> key will undo your last cell operation (which could be a deletion, creation, etc).
 - All actions can be done using the menus, but there are lots of keyboard shortcuts to speed things up.
 
-
-::::::::::::::::::::::::::::::::::::::::::::::::::
 
 ### Use the keyboard and mouse to select and edit cells.
 
@@ -349,7 +345,7 @@ Similarly, `-i` is in curly braces to make the whole statement the superscript f
 
 :::::::::::::::::::::::::
 
-
+::::::::::::::::::::::::::::::::::::::::::::::::::
 
 [jupyterlab]: https://jupyterlab.readthedocs.io/en/stable/
 [markdown]: https://en.wikipedia.org/wiki/Markdown
