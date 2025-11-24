@@ -6,10 +6,9 @@ exercises: 0
 
 ::::::::::::::::::::::::::::::::::::::: objectives
 
-- Launch the JupyterLab server.
-- Create a new Python script.
+- Open a VSCode project.
+- Create a Python script.
 - Create a Jupyter notebook.
-- Shutdown the JupyterLab server.
 - Understand the difference between a Python script and a Jupyter notebook.
 - Create Markdown cells in a notebook.
 - Create and run Python cells in a notebook.
@@ -22,204 +21,82 @@ exercises: 0
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-To run Python, we are going to use [Jupyter Notebooks][jupyter] via [JupyterLab][jupyterlab] for the remainder of this workshop. Jupyter notebooks are common in data science and visualization and serve as a convenient common-denominator experience for running Python code interactively where we can easily view and share the results of our Python code.
+In this workshop we will look at two options on how to run Python code: non-interactively via Python scripts and interactively via [Jupyter Notebooks][jupyter]. Jupyter notebooks are common in data science and visualization and serve as a convenient common-denominator experience for running Python code interactively where we can easily view and share the results of our Python code.
 
-There are other ways of editing, managing, and running code. Software developers often use an integrated development environment (IDE) like [PyCharm](https://www.jetbrains.com/pycharm/) or [Visual Studio Code](https://code.visualstudio.com/), or text editors like Vim or Emacs, to create and edit their Python programs. After editing and saving your Python programs you can execute those programs within the IDE itself or directly on the command line. In contrast, Jupyter notebooks let us execute and view the results of our Python code immediately within the notebook.
+There are diverse ways of editing, managing, and running code. Software developers often use an integrated development environment (IDE) like [PyCharm](https://www.jetbrains.com/pycharm/) or [Visual Studio Code](https://code.visualstudio.com/) (VSCode), or text editors like Vim or Emacs, to create and edit their Python programs. After editing and saving your Python programs you can execute those programs within the IDE itself or directly on the command line. In this workshop we will use VSCode to explore Python scripts as well as Jupyter notebooks. In contrast to Python scripts, Jupyter notebooks let us execute and view the results of our Python code immediately within the notebook.
 
-JupyterLab has several other handy features:
+Jupyter notebooks have several other handy features:
 
-- You can easily type, edit, and copy and paste blocks of code.
-- Tab complete allows you to easily access the names of things you are using
-  and learn more about them.
-- It allows you to annotate your code with links, different sized text, bullets, etc.
-  to make it more accessible to you and your collaborators.
+- It allows you to annotate your code with links, different sized text, bullets, etc. to make it more accessible to you and your collaborators.
 - It allows you to display figures next to the code that produces them
   to tell a complete story of the analysis.
 
 Each notebook contains one or more cells that contain code, text, or images.
 
-## Getting Started with JupyterLab
+::::::::::::::::::::::::::::::::::::::::: callout
 
-JupyterLab is an application server with a web user interface from [Project Jupyter][jupyter] that
-enables one to work with documents and activities such as Jupyter notebooks, text editors, terminals,
-and even custom components in a flexible, integrated, and extensible manner. JupyterLab requires a
-reasonably up-to-date browser (ideally a current version of Chrome, Safari, or Firefox); Internet
-Explorer versions 9 and below are *not* supported.
+To learn more about the origin of Jupyter notebooks and how to use them with Jupyterlab, see the JupyterLab based version of this lesson: [Software Carpentry: Plotting and Programming with Python](https://swcarpentry.github.io/python-novice-gapminder/)
 
-JupyterLab is included as part of the Anaconda Python distribution. If you have not already
-installed the Anaconda Python distribution, see [the setup instructions](../learners/setup.md)
-for installation instructions.
+:::::::::::::::::::::::::::::::::::::::::::::::::
 
-In this lesson we will run JupyterLab locally on our own machines so it will not require an internet connection besides
-the initial connection to download and install Anaconda and JupyterLab
+## Getting Started with VSCode
 
-- Start the JupyterLab server on your machine
-- Use a web browser to open a special localhost URL that connects to your JupyterLab server
-- The JupyterLab server does the work and the web browser renders the result
-- Type code into the browser and see the results after your JupyterLab server has finished executing your code
+VSCode is an integrated development environment (IDE), with extensive features for diverse programming languages.
+You can add functionality for (almost) anything using [VSCode Extensions](https://code.visualstudio.com/docs/configure/extensions/extension-marketplace).
 
-:::::::::::::::::::::::::::::::::::::::::  callout
+If you have not already installed the `Python` and `Jupyter` extensions or didn't set up the VSCode workspace for this workshop, see the workshop website for install instructions.
 
-## JupyterLab? What about Jupyter notebooks?
+### Setup a Python script
 
-JupyterLab is the [next stage in the evolution of the Jupyter Notebook](https://jupyterlab.readthedocs.io/en/stable/getting_started/overview.html#overview).
-If you have prior experience working with Jupyter notebooks, then you will have a good idea of what to expect from JupyterLab.
-
-Experienced users of Jupyter notebooks interested in a more detailed discussion of the similarities and differences
-between the JupyterLab and Jupyter notebook user interfaces can find more information in the
-[JupyterLab user interface documentation][jupyterlab-ui].
-
-
-::::::::::::::::::::::::::::::::::::::::::::::::::
-
-## Starting JupyterLab
-
-You can start the JupyterLab server through the command line or through an application called
-`Anaconda Navigator`. Anaconda Navigator is included as part of the Anaconda Python distribution.
-
-### macOS - Command Line
-
-To start the JupyterLab server you will need to access the command line through the Terminal.
-There are two ways to open Terminal on Mac.
-
-1. In your Applications folder, open Utilities and double-click on Terminal
-2. Press <kbd>Command</kbd> + <kbd>spacebar</kbd> to launch Spotlight. Type `Terminal` and then
-  double-click the search result or hit <kbd>Enter</kbd>
-
-After you have launched Terminal, type the command to launch the JupyterLab server.
-
-```bash
-$ jupyter lab
-```
-
-### Windows Users - Command Line
-
-To start the JupyterLab server you will need to access the Anaconda Prompt.
-
-Press <kbd>Windows Logo Key</kbd> and search for `Anaconda Prompt`, click the result or press enter.
-
-After you have launched the Anaconda Prompt, type the command:
-
-```bash
-$ jupyter lab
-```
-
-### Anaconda Navigator
-
-To start a JupyterLab server from Anaconda Navigator you must first [start Anaconda Navigator (click for detailed instructions on macOS, Windows, and Linux)](https://docs.anaconda.com/free/navigator/getting-started/#navigator-starting-navigator). You can search for Anaconda Navigator via Spotlight on macOS (<kbd>Command</kbd> + <kbd>spacebar</kbd>), the Windows search function (<kbd>Windows Logo Key</kbd>) or opening a terminal shell and executing the `anaconda-navigator` executable from the command line.
-
-After you have launched Anaconda Navigator, click the `Launch` button under JupyterLab. You may need
-to scroll down to find it.
-
-Here is a screenshot of an Anaconda Navigator page similar to the one that should open on either macOS
-or Windows.
+Open the workshop workspace in VSCode and create a `script-1.py` file. Add a line `print('Hello world')` in the file and run it using the `Run Python file` button on the top right of the VSCode window.
 
 <p align='center'>
-  <img alt="Anaconda Navigator landing page" src="fig/0_anaconda_navigator_landing_page.png" width="750"/>
+  <img alt="VSCode Run Python File" src="fig/0_VSCode_run_python_file.png" width="300"/>
 </p>
 
-And here is a screenshot of a JupyterLab landing page that should be similar to the one that opens in your
-default web browser after starting the JupyterLab server on either macOS or Windows.
+This will open an output terminal panel and display `Hello world` in it.
+
+Congratulations! You just ran your first Python script!
+
+### Setup a Jupyter notebook
+
+In the VSCode workspace create a `notebook-1.ipynb` file. The extension `ipynb` is short for <b>I</b>nteractive <b>Py</br>thon <b>N</b>ote<b>b</b>ook.
 
 <p align='center'>
-  <img alt="JupyterLab landing page" src="fig/0_jupyterlab_landing_page.png" width="750"/>
+  <img alt="VSCode Jupyter Notebook" src="fig/0_VSCode_jupyter_notebook.png" width="300"/>
 </p>
 
-## The JupyterLab Interface
+The VSCode interface provides additional options for the jupyter notebook file in comparison to the Python script. Instead of running the file directly as a Python script, for a Jupyter notebook we need to select which Jupyter kernel we want to use to run this notebook. Click on the `Select Kernel` and select the Python environment you created in the setup for this workshop. This will start a jupyter kernel in the background, so you can execute the content of the Jupyter notebook.
 
-JupyterLab has many features found in traditional integrated development environments (IDEs) but
-is focused on providing flexible building blocks for interactive, exploratory computing.
+To run Python code in a Jupyter notebook, add a code cell (`+Code` button) and add `print("Hello World")` into the new cell. To execute the cell, click the `Execute Cell` button or press `Ctrl+Alt+Enter`. The output is printed directly below the cell. 
 
-The [JupyterLab Interface][jupyterlab-ui]
-consists of the Menu Bar, a collapsable Left Side Bar, and the Main Work Area which contains tabs
-of documents and activities.
+<p align='center'>
+  <img alt="VSCode Jupyter Notebook Code Cell" src="fig/0_VSCode_jupyter_notebook_code_cell.png" width="300"/>
+</p>
+
+Congratulations! You just ran your first Python command in a Jupyter notebook!
 
 ### Menu Bar
 
-The Menu Bar at the top of JupyterLab has the top-level menus that expose various actions
-available in JupyterLab along with their keyboard shortcuts (where applicable). The following
-menus are included by default.
+The VSCode Menu Bar has the top-level menus that expose various actions for file options and editor configuration which are useful independent of the language you are working with. In many cases those commands also come with pre-defined keyboard shortcuts indicated on the right side of the option field. A short overview of VSCode menus
 
-- **File:** Actions related to files and directories such as *New*, *Open*, *Close*, *Save*, etc. The *File* menu also includes the *Shut Down* action used to shutdown the JupyterLab server.
+- **File:** Actions related to files and directories such as *New*, *Open*, *Close*, *Save*, etc. as well as general editor settings and preferences.
 - **Edit:** Actions related to editing documents and other activities such as *Undo*, *Cut*, *Copy*, *Paste*, etc.
-- **View:** Actions that alter the appearance of JupyterLab.
+- **View:** Actions that alter the appearance of VSCode.
 - **Run:** Actions for running code in different activities such as notebooks and code consoles (discussed below).
-- **Kernel:** Actions for managing kernels. Kernels in Jupyter will be explained in more detail below.
-- **Tabs:** A list of the open documents and activities in the main work area.
-- **Settings:** Common JupyterLab settings can be configured using this menu. There is also an *Advanced Settings Editor* option in the dropdown menu that provides more fine-grained control of JupyterLab settings and configuration options.
-- **Help:** A list of JupyterLab and kernel help links.
+- **Help:** A list of VSCode help links.
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
 ## Kernels
 
-The JupyterLab [docs](https://jupyterlab.readthedocs.io/en/stable/user/documents_kernels.html)
-define kernels as "separate processes started by the server that runs your code in different programming languages and environments."
-When we open a Jupyter Notebook, that starts a kernel - a process - that is going to run the code.
-In this lesson, we'll be using the Jupyter ipython kernel which lets us run Python 3 code interactively.
-
-Using other Jupyter [kernels for other programming languages](https://github.com/jupyter/jupyter/wiki/Jupyter-kernels) would let us
-write and execute code in other programming languages in the same JupyterLab interface, like R, Java, Julia, Ruby, JavaScript, Fortran,
-etc.
+To run code in the Jupyter notebook it is necessary to select a kernel. Here we used the Python environment we set up earliet. In general Jupyter [docs](https://jupyterlab.readthedocs.io/en/stable/user/documents_kernels.html)
+define kernels as "separate processes started by the Jupyter server that runs your code in different programming languages and environments."
+So when we assign the Python interpeter as kernel, that starts a kernel - a process - that is going to run the code. The kernel is not necessarily a Python process, but exist in for a number of languages. Using other Jupyter [kernels for other programming languages](https://github.com/jupyter/jupyter/wiki/Jupyter-kernels) would let us
+write and execute code in other programming languages in the same JupyterLab interface, like R, Java, Julia, Ruby, JavaScript, Fortran, etc.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-A screenshot of the default Menu Bar is provided below.
-
-<p align='center'>   <img alt="JupyterLab Menu Bar" src="fig/0_jupyterlab_menu_bar.png" width="750"/>
-</p>
-
-### Left Sidebar
-
-The left sidebar contains a number of commonly used tabs, such as a file browser (showing the
-contents of the directory where the JupyterLab server was launched), a list of running kernels
-and terminals, the command palette, and a list of open tabs in the main work area. A screenshot of
-the default Left Side Bar is provided below.
-
-<p align='center'>   <img alt="JupyterLab Left Side Bar" src="fig/0_jupyterlab_left_side_bar.png" width="250"/>
-</p>
-
-The left sidebar can be collapsed or expanded by selecting "Show Left Sidebar" in the View menu or
-by clicking on the active sidebar tab.
-
-### Main Work Area
-
-The main work area in JupyterLab enables you to arrange documents (notebooks, text files, etc.)
-and other activities (terminals, code consoles, etc.) into panels of tabs that can be resized or
-subdivided. A screenshot of the default Main Work Area is provided below.
-
-If you do not see the Launcher tab, click the blue plus sign under the "File" and "Edit" menus and it will appear.
-
-<p align='center'>   <img alt="JupyterLab Main Work Area" src="fig/0_jupyterlab_main_work_area.png" width="750"/>
-</p>
-
-Drag a tab to the center of a tab panel to move the tab to the panel. Subdivide a tab panel by
-dragging a tab to the left, right, top, or bottom of the panel. The work area has a single current
-activity. The tab for the current activity is marked with a colored top border (blue by default).
-
-## Creating a Python script
-
-- To start writing a new Python program click the Text File icon under the *Other* header in the Launcher tab of the Main Work Area.
-  - You can also create a new plain text file by selecting the *New -> Text File* from the *File* menu in the Menu Bar.
-- To convert this plain text file to a Python program, select the *Save File As* action from the *File* menu in the Menu Bar and give your new text file a name that ends with the `.py` extension.
-  - The `.py` extension lets everyone (including the operating system) know that this text file is a Python program.
-  - This is convention, not a requirement.
-
-## Creating a Jupyter Notebook
-
-To open a new notebook click the Python 3 icon under the *Notebook* header in the Launcher tab in
-the main work area. You can also create a new notebook by selecting *New -> Notebook* from the *File* menu in the Menu Bar.
-
-Additional notes on Jupyter notebooks.
-
-- Notebook files have the extension `.ipynb` to distinguish them from plain-text Python programs.
-- Notebooks can be exported as Python scripts that can be run from the command line.
-
-Below is a screenshot of a Jupyter notebook running inside JupyterLab. If you are interested in
-more details, then see the [official notebook documentation][jupyterlab-notebook-docs].
-
-<p align='center'>   <img alt="Example Jupyter Notebook" src="fig/0_jupyterlab_notebook_screenshot.png" width="750"/>
-</p>
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
@@ -232,42 +109,12 @@ more details, then see the [official notebook documentation][jupyterlab-notebook
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::::  challenge
-
-## Arranging Documents into Panels of Tabs
-
-In the JupyterLab Main Work Area you can arrange documents into panels of tabs. Here is an
-example from the [official documentation][jupyterlab].
-
-<p align='center'>   <img alt="Multi-panel JupyterLab" src="fig/0_multipanel_jupyterlab_screenshot.png" width="750"/>
-</p>
-
-First, create a text file, Python console, and terminal window and arrange them into three
-panels in the main work area. Next, create a notebook, terminal window, and text file and
-arrange them into three panels in the main work area. Finally, create your own combination of
-panels and tabs. What combination of panels and tabs do you think will be most useful for your
-workflow?
-
-:::::::::::::::  solution
-
-## Solution
-
-After creating the necessary tabs, you can drag one of the tabs to the center of a panel to
-move the tab to the panel; next you can subdivide a tab panel by dragging a tab to the left,
-right, top, or bottom of the panel.
-
-
-
-:::::::::::::::::::::::::
-
-::::::::::::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
 ## Code vs. Text
 
-Jupyter mixes code and text in different types of blocks, called cells. We often use the term
-"code" to mean "the source code of software written in a language such as Python".
+Jupyter notebooks mix code and text in different types of blocks, called cells. We often use the term "code" to mean "the source code of software written in a language such as Python".
 A "code cell" in a Notebook is a cell that contains software;
 a "text cell" is one that contains ordinary prose written for human beings.
 
@@ -276,8 +123,8 @@ a "text cell" is one that contains ordinary prose written for human beings.
 
 ## The Notebook has Command and Edit modes.
 
-- If you press <kbd>Esc</kbd> and <kbd>Return</kbd> alternately, the outer border of your code cell will change from gray to blue.
-- These are the **Command** (gray) and **Edit** (blue) modes of your notebook.
+- If you press <kbd>Esc</kbd> and <kbd>Return</kbd> alternately, the outer border of your code cell will change from highlighting the cell itself to highlighting the cell content.
+- These are the **Command** (cell) and **Edit** (content) modes of your notebook.
 - Command mode allows you to edit notebook-level features, and Edit mode changes the content of cells.
 - When in Command mode (esc/gray),
   - The <kbd>b</kbd> key will make a new cell below the currently selected cell.
@@ -286,29 +133,6 @@ a "text cell" is one that contains ordinary prose written for human beings.
   - The <kbd>z</kbd> key will undo your last cell operation (which could be a deletion, creation, etc).
 - All actions can be done using the menus, but there are lots of keyboard shortcuts to speed things up.
 
-:::::::::::::::::::::::::::::::::::::::  challenge
-
-## Command Vs. Edit
-
-In the Jupyter notebook page are you currently in Command or Edit mode?  
-Switch between the modes.
-Use the shortcuts to generate a new cell.
-Use the shortcuts to delete a cell.
-Use the shortcuts to undo the last cell operation you performed.
-
-:::::::::::::::  solution
-
-## Solution
-
-Command mode has a grey border and Edit mode has a blue border.
-Use <kbd>Esc</kbd> and <kbd>Return</kbd> to switch between modes.
-You need to be in Command mode (Press <kbd>Esc</kbd> if your cell is blue).  Type <kbd>b</kbd> or <kbd>a</kbd>.
-You need to be in Command mode (Press <kbd>Esc</kbd> if your cell is blue).  Type <kbd>x</kbd>.
-You need to be in Command mode (Press <kbd>Esc</kbd> if your cell is blue).  Type <kbd>z</kbd>.
-
-
-
-:::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -327,8 +151,7 @@ You need to be in Command mode (Press <kbd>Esc</kbd> if your cell is blue).  Typ
 ### The Notebook will turn Markdown into pretty-printed documentation.
 
 - Notebooks can also render [Markdown][markdown].
-  - A simple plain-text format for writing lists, links,
-    and other things that might go into a web page.
+  - A simple plain-text format for writing lists, links, and other things that might go into a web page.
   - Equivalently, a subset of HTML that looks like what you'd send in an old-fashioned email.
 - Turn the current cell into a Markdown cell by entering the Command mode (<kbd>Esc</kbd>/gray)
   and press the <kbd>M</kbd> key.
@@ -524,34 +347,11 @@ Similarly, `-i` is in curly braces to make the whole statement the superscript f
 `\sum` and `\approx` are LaTeX commands for "sum over" and "approximate" symbols.
 
 
-
 :::::::::::::::::::::::::
-
-::::::::::::::::::::::::::::::::::::::::::::::::::
-
-## Closing JupyterLab
-
-- From the Menu Bar select the "File" menu and then choose "Shut Down" at the bottom of the dropdown menu. You will be prompted to confirm that you wish to shutdown the JupyterLab server (don't forget to save your work!). Click "Shut Down" to shutdown the JupyterLab server.
-- To restart the JupyterLab server you will need to re-run the following command from a shell.
-
-```
-$ jupyter lab
-```
-
-:::::::::::::::::::::::::::::::::::::::  challenge
-
-## Closing JupyterLab
-
-Practice closing and restarting the JupyterLab server.
-
-
-::::::::::::::::::::::::::::::::::::::::::::::::::
 
 
 
 [jupyterlab]: https://jupyterlab.readthedocs.io/en/stable/
-[jupyterlab-ui]: https://jupyterlab.readthedocs.io/en/stable/user/interface.html
-[jupyterlab-notebook-docs]: https://jupyterlab.readthedocs.io/en/stable/user/notebook.html
 [markdown]: https://en.wikipedia.org/wiki/Markdown
 [data_carpentry]: https://datacarpentry.org
 
