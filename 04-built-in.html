@@ -18,13 +18,13 @@
   <div class="container-fluid top-nav-container">
     <div class="col-md-8">
       <div class="large-logo">
-        <img id="swc-logo" alt="Software Carpentry" src="assets/images/software-logo.svg"><span class="badge text-bg-info">
-          <abbr title="This lesson is in the beta phase, which means that it is ready for teaching by instructors outside of the original author team.">
+        <img id="swc-logo" alt="Software Carpentry" src="assets/images/software-logo.svg"><span class="badge text-bg-warning">
+          <abbr title="This lesson is in the alpha phase, which means that it has been taught once and lesson authors are iterating on feedback.">
             <a href="https://docs.carpentries.org/resources/curriculum/lesson-life-cycle.html" class="external-link alert-link">
-              <i aria-hidden="true" class="icon" data-feather="alert-circle" style="border-radius: 5px"></i>
-              Beta
+              <i aria-hidden="true" class="icon" data-feather="alert-triangle" style="border-radius: 5px"></i>
+              Alpha
             </a>
-            <span class="visually-hidden">This lesson is in the beta phase, which means that it is ready for teaching by instructors outside of the original author team.</span>
+            <span class="visually-hidden">This lesson is in the alpha phase, which means that it has been taught once and lesson authors are iterating on feedback.</span>
           </abbr>
         </span>
 
@@ -254,7 +254,7 @@ arguments.</a></li>
 <li><a href="#functions-attached-to-objects-are-called-methods">Functions attached to objects are called methods</a></li>
 <li><a href="#use-the-built-in-function-help-to-get-help-for-a-function.">Use the built-in function <code>help</code> to get help for a
 function.</a></li>
-<li><a href="#the-jupyter-notebook-has-two-ways-to-get-help.">The Jupyter Notebook has two ways to get help.</a></li>
+<li><a href="#how-to-get-more-help.">How to get more help.</a></li>
 <li><a href="#python-reports-a-syntax-error-when-it-cant-understand-the-source-of-a-program.">Python reports a syntax error when it can’t understand the source of
 a program.</a></li>
 <li><a href="#runtime-error">Python reports a runtime error when something goes wrong while a
@@ -468,7 +468,7 @@ program is executing.</a></li>
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Built-in Functions and Help</h1>
-        <p>Last updated on 2025-11-21 |
+        <p>Last updated on 2025-11-27 |
 
         <a href="https://github.com/julia-sprenger/python-novice-gapminder/edit/main/episodes/04-built-in.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -600,7 +600,7 @@ compared.</li>
 <h3 class="code-label">ERROR<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="error" tabindex="0"><code>TypeError                                 Traceback (most recent call last)
-&lt;ipython-input-52-3f049acf3762&gt; in &lt;module&gt;
+Cell In[4], line 1
 ----&gt; 1 print(max(1, 'a'))
 
 TypeError: '&gt;' not supported between instances of 'str' and 'int'</code></pre>
@@ -691,12 +691,9 @@ round(number, ndigits=None)
     The return value is an integer if ndigits is omitted or None.  Otherwise
     the return value has the same type as the number.  ndigits may be negative.</code></pre>
 </div>
-</section><section><h2 class="section-heading" id="the-jupyter-notebook-has-two-ways-to-get-help-">The Jupyter Notebook has two ways to get help.<a class="anchor" aria-label="anchor" href="#the-jupyter-notebook-has-two-ways-to-get-help-"></a></h2>
-<hr class="half-width"><ul><li>Option 1: Place the cursor near where the function is invoked in a
-cell (i.e., the function name or its parameters),
-<ul><li>Hold down <kbd>Shift</kbd>, and press <kbd>Tab</kbd>.</li>
-<li>Do this several times to expand the information returned.</li>
-</ul></li>
+</section><section><h2 class="section-heading" id="how-to-get-more-help-">How to get more help.<a class="anchor" aria-label="anchor" href="#how-to-get-more-help-"></a></h2>
+<hr class="half-width"><ul><li>Option 1: Hover over the function name in a cell. VSCode will open
+an information panel providing details on the pop-up window</li>
 <li>Option 2: Type the function name in a cell with a question mark
 after it. Then run the cell.</li>
 </ul></section><section><h2 class="section-heading" id="python-reports-a-syntax-error-when-it-cant-understand-the-source-of-a-program-">Python reports a syntax error when it can’t understand the source of
@@ -711,10 +708,10 @@ a program.<a class="anchor" aria-label="anchor" href="#python-reports-a-syntax-e
 <div class="codewrapper">
 <h3 class="code-label">ERROR<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="error" tabindex="0"><code>  File "&lt;ipython-input-56-f42768451d55&gt;", line 2
+<pre class="error" tabindex="0"><code>  Cell In[8], line 1
     name = 'Feng
-                ^
-SyntaxError: EOL while scanning string literal</code></pre>
+           ^
+SyntaxError: unterminated string literal (detected at line 1)</code></pre>
 </div>
 <div class="codewrapper sourceCode" id="cb22">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -725,10 +722,10 @@ SyntaxError: EOL while scanning string literal</code></pre>
 <div class="codewrapper">
 <h3 class="code-label">ERROR<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="error" tabindex="0"><code>  File "&lt;ipython-input-57-ccc3df3cf902&gt;", line 2
-    age = = 52
-          ^
-SyntaxError: invalid syntax</code></pre>
+<pre class="error" tabindex="0"><code>  Cell In[5], line 1
+    name = 'Feng
+           ^
+SyntaxError: unterminated string literal (detected at line 1)</code></pre>
 </div>
 <ul><li>Look more closely at the error message:</li>
 </ul><div class="codewrapper sourceCode" id="cb24">
@@ -739,17 +736,13 @@ SyntaxError: invalid syntax</code></pre>
 <div class="codewrapper">
 <h3 class="code-label">ERROR<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="error" tabindex="0"><code>  File "&lt;ipython-input-6-d1cc229bf815&gt;", line 1
-    print ("hello world"
-                        ^
-SyntaxError: unexpected EOF while parsing</code></pre>
+<pre class="error" tabindex="0"><code>  Cell In[6], line 1
+    print("hello world"
+                       ^
+SyntaxError: incomplete input</code></pre>
 </div>
 <ul><li>The message indicates a problem on first line of the input (“line
-1”).
-<ul><li>In this case the “ipython-input” section of the file name tells us
-that we are working with input into IPython, the Python interpreter used
-by the Jupyter Notebook.</li>
-</ul></li>
+1”).</li>
 <li>The <code>-6-</code> part of the filename indicates that the error
 occurred in cell 6 of our Notebook.</li>
 <li>Next is the problematic line of code, indicating the problem with a
@@ -766,7 +759,7 @@ program is executing.<a class="anchor" aria-label="anchor" href="#runtime-error"
 <h3 class="code-label">ERROR<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="error" tabindex="0"><code>NameError                                 Traceback (most recent call last)
-&lt;ipython-input-59-1214fb6c55fc&gt; in &lt;module&gt;
+Cell In[3], line 2
       1 age = 53
 ----&gt; 2 remaining = 100 - aege # mis-spelled 'age'
 
@@ -801,6 +794,18 @@ debugging”</a> among programmers.</li>
 </ul><div class="section level3">
 <h3 id="generative-ai">Generative AI<a class="anchor" aria-label="anchor" href="#generative-ai"></a></h3>
 
+<div id="callout1" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<span class="callout-header">Callout</span>
+<div class="callout-inner">
+<div class="callout-content">
+<p>When using generative AI at the OECD, make sure to follow the <a href="https://portal.oecd.org/eshare/pac/kc/Communicatiohttps://oecd.ai/en/ai-principlesns/Comms%20preparation/External%20Communication/Updated_Generative_AI_Staff_Guidelines_ENG.pdf" class="external-link">Staff
+Guidelines on the Use of Generative Artificial Intelligence</a>.</p>
+</div>
+</div>
+</div>
 <p>It is increasingly common for people to use <em>generative AI</em>
 chatbots such as ChatGPT to get help while coding. You will probably
 receive some useful guidance by presenting your error message to the
@@ -882,7 +887,7 @@ happen, when is each function called, etc.</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <ol style="list-style-type: decimal"><li>Order of operations:</li>
 <li><code>1.1 * radiance = 1.1</code></li>
@@ -926,7 +931,7 @@ message? If it runs, does its result make any sense?</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb30">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -965,7 +970,7 @@ integer cannot meaningfully be compared.</p>
 <h3 class="code-label">ERROR<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="error" tabindex="0"><code>TypeError                                 Traceback (most recent call last)
-&lt;ipython-input-65-bc82ad05177a&gt; in &lt;module&gt;
+Cell In[7], line 1
 ----&gt; 1 max(len(rich), poor)
 
 TypeError: '&gt;' not supported between instances of 'str' and 'int'</code></pre>
@@ -992,7 +997,7 @@ TypeError: '&gt;' not supported between instances of 'str' and 'int'</code></pre
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
 <div class="accordion-body">
 <p><code>max</code> and <code>min</code> return TypeErrors in this case
 because the correct number of parameters was not supplied. If it just
@@ -1023,7 +1028,7 @@ simpler way to do this in a later episode.)</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution4" aria-expanded="false" aria-controls="collapseSolution4">
   <h4 class="accordion-header" id="headingSolution4"> Show me the solution </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
 <div class="accordion-body">
 <p><code>name[len(name) - 1]</code></p>
 </div>
@@ -1135,8 +1140,8 @@ tracing the program’s execution.</li>
   "url": "https://swcarpentry.github.io/python-novice-gapminder/04-built-in.html",
   "identifier": "https://swcarpentry.github.io/python-novice-gapminder/04-built-in.html",
   "dateCreated": "2016-01-07",
-  "dateModified": "2025-11-21",
-  "datePublished": "2025-11-25"
+  "dateModified": "2025-11-27",
+  "datePublished": "2025-11-27"
 }
 
   </script><script>

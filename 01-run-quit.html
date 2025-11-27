@@ -18,13 +18,13 @@
   <div class="container-fluid top-nav-container">
     <div class="col-md-8">
       <div class="large-logo">
-        <img id="swc-logo" alt="Software Carpentry" src="assets/images/software-logo.svg"><span class="badge text-bg-info">
-          <abbr title="This lesson is in the beta phase, which means that it is ready for teaching by instructors outside of the original author team.">
+        <img id="swc-logo" alt="Software Carpentry" src="assets/images/software-logo.svg"><span class="badge text-bg-warning">
+          <abbr title="This lesson is in the alpha phase, which means that it has been taught once and lesson authors are iterating on feedback.">
             <a href="https://docs.carpentries.org/resources/curriculum/lesson-life-cycle.html" class="external-link alert-link">
-              <i aria-hidden="true" class="icon" data-feather="alert-circle" style="border-radius: 5px"></i>
-              Beta
+              <i aria-hidden="true" class="icon" data-feather="alert-triangle" style="border-radius: 5px"></i>
+              Alpha
             </a>
-            <span class="visually-hidden">This lesson is in the beta phase, which means that it is ready for teaching by instructors outside of the original author team.</span>
+            <span class="visually-hidden">This lesson is in the alpha phase, which means that it has been taught once and lesson authors are iterating on feedback.</span>
           </abbr>
         </span>
 
@@ -216,13 +216,8 @@
 
     <div id="flush-collapsecurrent" class="accordion-collapse collapse show" aria-labelledby="flush-headingcurrent" data-bs-parent="#accordionFlushcurrent">
       <div class="accordion-body">
-        <ul><li><a href="#getting-started-with-jupyterlab">Getting Started with JupyterLab</a></li>
-<li><a href="#starting-jupyterlab">Starting JupyterLab</a></li>
-<li><a href="#the-jupyterlab-interface">The JupyterLab Interface</a></li>
-<li><a href="#creating-a-python-script">Creating a Python script</a></li>
-<li><a href="#creating-a-jupyter-notebook">Creating a Jupyter Notebook</a></li>
+        <ul><li><a href="#getting-started-with-vscode">Getting Started with VSCode</a></li>
 <li><a href="#the-notebook-has-command-and-edit-modes.">The Notebook has Command and Edit modes.</a></li>
-<li><a href="#closing-jupyterlab">Closing JupyterLab</a></li>
         </ul></div><!--/div.accordion-body-->
     </div><!--/div.accordion-collapse-->
 
@@ -458,7 +453,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Running and Quitting</h1>
-        <p>Last updated on 2025-11-21 |
+        <p>Last updated on 2025-11-27 |
 
         <a href="https://github.com/julia-sprenger/python-novice-gapminder/edit/main/episodes/01-run-quit.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -485,10 +480,9 @@
 <div class="card-body">
 <div class="inner bordered">
 <h3 class="card-title">Objectives</h3>
-<ul><li>Launch the JupyterLab server.</li>
-<li>Create a new Python script.</li>
+<ul><li>Open a VSCode project.</li>
+<li>Create a Python script.</li>
 <li>Create a Jupyter notebook.</li>
-<li>Shutdown the JupyterLab server.</li>
 <li>Understand the difference between a Python script and a Jupyter
 notebook.</li>
 <li>Create Markdown cells in a notebook.</li>
@@ -498,170 +492,114 @@ notebook.</li>
 </div>
 </div>
 </div>
-<p>To run Python, we are going to use <a href="https://jupyter.org/" class="external-link">Jupyter Notebooks</a> via <a href="https://jupyterlab.readthedocs.io/en/stable/" class="external-link">JupyterLab</a> for
-the remainder of this workshop. Jupyter notebooks are common in data
-science and visualization and serve as a convenient common-denominator
-experience for running Python code interactively where we can easily
-view and share the results of our Python code.</p>
-<p>There are other ways of editing, managing, and running code. Software
-developers often use an integrated development environment (IDE) like <a href="https://www.jetbrains.com/pycharm/" class="external-link">PyCharm</a> or <a href="https://code.visualstudio.com/" class="external-link">Visual Studio Code</a>, or text
-editors like Vim or Emacs, to create and edit their Python programs.
-After editing and saving your Python programs you can execute those
-programs within the IDE itself or directly on the command line. In
-contrast, Jupyter notebooks let us execute and view the results of our
-Python code immediately within the notebook.</p>
-<p>JupyterLab has several other handy features:</p>
-<ul><li>You can easily type, edit, and copy and paste blocks of code.</li>
-<li>Tab complete allows you to easily access the names of things you are
-using and learn more about them.</li>
-<li>It allows you to annotate your code with links, different sized
+<p>In this workshop we will look at two options on how to run Python
+code: non-interactively via Python scripts and interactively via <a href="https://jupyter.org/" class="external-link">Jupyter Notebooks</a>. Jupyter notebooks are
+common in data science and visualization and serve as a convenient
+common-denominator experience for running Python code interactively
+where we can easily view and share the results of our Python code.</p>
+<p>There are diverse ways of editing, managing, and running code.
+Software developers often use an integrated development environment
+(IDE) like <a href="https://www.jetbrains.com/pycharm/" class="external-link">PyCharm</a> or
+<a href="https://code.visualstudio.com/" class="external-link">Visual Studio Code</a>
+(VSCode), or text editors like Vim or Emacs, to create and edit their
+Python programs. After editing and saving your Python programs you can
+execute those programs within the IDE itself or directly on the command
+line. In this workshop we will use VSCode to explore Python scripts as
+well as Jupyter notebooks. In contrast to Python scripts, Jupyter
+notebooks let us execute and view the results of our Python code
+immediately within the notebook.</p>
+<p>Jupyter notebooks have several other handy features:</p>
+<ul><li>It allows you to annotate your code with links, different sized
 text, bullets, etc. to make it more accessible to you and your
 collaborators.</li>
 <li>It allows you to display figures next to the code that produces them
 to tell a complete story of the analysis.</li>
 </ul><p>Each notebook contains one or more cells that contain code, text, or
 images.</p>
-<section><h2 class="section-heading" id="getting-started-with-jupyterlab">Getting Started with JupyterLab<a class="anchor" aria-label="anchor" href="#getting-started-with-jupyterlab"></a></h2>
-<hr class="half-width"><p>JupyterLab is an application server with a web user interface from <a href="https://jupyter.org/" class="external-link">Project Jupyter</a> that enables one to work
-with documents and activities such as Jupyter notebooks, text editors,
-terminals, and even custom components in a flexible, integrated, and
-extensible manner. JupyterLab requires a reasonably up-to-date browser
-(ideally a current version of Chrome, Safari, or Firefox); Internet
-Explorer versions 9 and below are <em>not</em> supported.</p>
-<p>JupyterLab is included as part of the Anaconda Python distribution.
-If you have not already installed the Anaconda Python distribution, see
-<a href="index.html#setup">the setup instructions</a> for installation
-instructions.</p>
-<p>In this lesson we will run JupyterLab locally on our own machines so
-it will not require an internet connection besides the initial
-connection to download and install Anaconda and JupyterLab</p>
-<ul><li>Start the JupyterLab server on your machine</li>
-<li>Use a web browser to open a special localhost URL that connects to
-your JupyterLab server</li>
-<li>The JupyterLab server does the work and the web browser renders the
-result</li>
-<li>Type code into the browser and see the results after your JupyterLab
-server has finished executing your code</li>
-</ul><div id="jupyterlab-what-about-jupyter-notebooks" class="callout">
+<div id="callout1" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
 <span class="callout-header">Callout</span>
-<div id="jupyterlab-what-about-jupyter-notebooks" class="callout-inner">
-<h3 class="callout-title">JupyterLab? What about Jupyter notebooks?</h3>
+<div class="callout-inner">
 <div class="callout-content">
-<p>JupyterLab is the <a href="https://jupyterlab.readthedocs.io/en/stable/getting_started/overview.html#overview" class="external-link">next
-stage in the evolution of the Jupyter Notebook</a>. If you have prior
-experience working with Jupyter notebooks, then you will have a good
-idea of what to expect from JupyterLab.</p>
-<p>Experienced users of Jupyter notebooks interested in a more detailed
-discussion of the similarities and differences between the JupyterLab
-and Jupyter notebook user interfaces can find more information in the <a href="https://jupyterlab.readthedocs.io/en/stable/user/interface.html" class="external-link">JupyterLab
-user interface documentation</a>.</p>
+<p>To learn more about the origin of Jupyter notebooks and how to use
+them with Jupyterlab, see the JupyterLab based version of this lesson:
+<a href="https://swcarpentry.github.io/python-novice-gapminder/" class="external-link">Software
+Carpentry: Plotting and Programming with Python</a></p>
 </div>
 </div>
 </div>
-</section><section><h2 class="section-heading" id="starting-jupyterlab">Starting JupyterLab<a class="anchor" aria-label="anchor" href="#starting-jupyterlab"></a></h2>
-<hr class="half-width"><p>You can start the JupyterLab server through the command line or
-through an application called <code>Anaconda Navigator</code>. Anaconda
-Navigator is included as part of the Anaconda Python distribution.</p>
+<section><h2 class="section-heading" id="getting-started-with-vscode">Getting Started with VSCode<a class="anchor" aria-label="anchor" href="#getting-started-with-vscode"></a></h2>
+<hr class="half-width"><p>VSCode is an integrated development environment (IDE), with extensive
+features for diverse programming languages. You can add functionality
+for (almost) anything using <a href="https://code.visualstudio.com/docs/configure/extensions/extension-marketplace" class="external-link">VSCode
+Extensions</a>.</p>
+<p>If you have not already installed the <code>Python</code> and
+<code>Jupyter</code> extensions or didn’t set up the VSCode workspace
+for this workshop, see the workshop website for install
+instructions.</p>
 <div class="section level3">
-<h3 id="macos---command-line">macOS - Command Line<a class="anchor" aria-label="anchor" href="#macos---command-line"></a></h3>
-<p>To start the JupyterLab server you will need to access the command
-line through the Terminal. There are two ways to open Terminal on
-Mac.</p>
-<ol style="list-style-type: decimal"><li>In your Applications folder, open Utilities and double-click on
-Terminal</li>
-<li>Press <kbd>Command</kbd> + <kbd>spacebar</kbd> to launch Spotlight.
-Type <code>Terminal</code> and then double-click the search result or
-hit <kbd>Enter</kbd>
-</li>
-</ol><p>After you have launched Terminal, type the command to launch the
-JupyterLab server.</p>
-<div class="codewrapper sourceCode" id="cb1">
-<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="ex">$</span> jupyter lab</span></code></pre>
-</div>
-</div>
-<div class="section level3">
-<h3 id="windows-users---command-line">Windows Users - Command Line<a class="anchor" aria-label="anchor" href="#windows-users---command-line"></a></h3>
-<p>To start the JupyterLab server you will need to access the Anaconda
-Prompt.</p>
-<p>Press <kbd>Windows Logo Key</kbd> and search for
-<code>Anaconda Prompt</code>, click the result or press enter.</p>
-<p>After you have launched the Anaconda Prompt, type the command:</p>
-<div class="codewrapper sourceCode" id="cb2">
-<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="ex">$</span> jupyter lab</span></code></pre>
-</div>
-</div>
-<div class="section level3">
-<h3 id="anaconda-navigator">Anaconda Navigator<a class="anchor" aria-label="anchor" href="#anaconda-navigator"></a></h3>
-<p>To start a JupyterLab server from Anaconda Navigator you must first
-<a href="https://docs.anaconda.com/free/navigator/getting-started/#navigator-starting-navigator" class="external-link">start
-Anaconda Navigator (click for detailed instructions on macOS, Windows,
-and Linux)</a>. You can search for Anaconda Navigator via Spotlight on
-macOS (<kbd>Command</kbd> + <kbd>spacebar</kbd>), the Windows search
-function (<kbd>Windows Logo Key</kbd>) or opening a terminal shell and
-executing the <code>anaconda-navigator</code> executable from the
-command line.</p>
-<p>After you have launched Anaconda Navigator, click the
-<code>Launch</code> button under JupyterLab. You may need to scroll down
-to find it.</p>
-<p>Here is a screenshot of an Anaconda Navigator page similar to the one
-that should open on either macOS or Windows.</p>
+<h3 id="setup-a-python-script">Setup a Python script<a class="anchor" aria-label="anchor" href="#setup-a-python-script"></a></h3>
+<p>Open the workshop workspace in VSCode and create a
+<code>script-1.py</code> file. Add a line
+<code>print('Hello world')</code> in the file and run it using the
+<code>Run Python file</code> button on the top right of the VSCode
+window.</p>
 <p align="center">
-<img alt="Anaconda Navigator landing page" src="fig/0_anaconda_navigator_landing_page.png" width="750" class="figure"></p>
-<p>And here is a screenshot of a JupyterLab landing page that should be
-similar to the one that opens in your default web browser after starting
-the JupyterLab server on either macOS or Windows.</p>
-<p align="center">
-<img alt="JupyterLab landing page" src="fig/0_jupyterlab_landing_page.png" width="750" class="figure"></p>
+<img alt="VSCode Run Python File" src="fig/0_VSCode_run_python_file.png" width="300" class="figure"></p>
+<p>This will open an output terminal panel and display
+<code>Hello world</code> in it.</p>
+<p>Congratulations! You just ran your first Python script!</p>
 </div>
-</section><section><h2 class="section-heading" id="the-jupyterlab-interface">The JupyterLab Interface<a class="anchor" aria-label="anchor" href="#the-jupyterlab-interface"></a></h2>
-<hr class="half-width"><p>JupyterLab has many features found in traditional integrated
-development environments (IDEs) but is focused on providing flexible
-building blocks for interactive, exploratory computing.</p>
-<p>The <a href="https://jupyterlab.readthedocs.io/en/stable/user/interface.html" class="external-link">JupyterLab
-Interface</a> consists of the Menu Bar, a collapsable Left Side Bar, and
-the Main Work Area which contains tabs of documents and activities.</p>
+<div class="section level3">
+<h3 id="setup-a-jupyter-notebook">Setup a Jupyter notebook<a class="anchor" aria-label="anchor" href="#setup-a-jupyter-notebook"></a></h3>
+<p>In the VSCode workspace create a <code>notebook-1.ipynb</code> file.
+The extension <code>ipynb</code> is short for <b>I</b>nteractive
+<b>Python <b>N</b>ote<b>b</b>ook.</b></p>
+<p align="center">
+<img alt="VSCode Jupyter Notebook" src="fig/0_VSCode_jupyter_notebook.png" width="300" class="figure"></p>
+<p>The VSCode interface provides additional options for the jupyter
+notebook file in comparison to the Python script. Instead of running the
+file directly as a Python script, for a Jupyter notebook we need to
+select which Jupyter kernel we want to use to run this notebook. Click
+on the <code>Select Kernel</code> and select the Python environment you
+created in the setup for this workshop. This will start a jupyter kernel
+in the background, so you can execute the content of the Jupyter
+notebook.</p>
+<p>To run Python code in a Jupyter notebook, add a code cell
+(<code>+Code</code> button) and add <code>print("Hello World")</code>
+into the new cell. To execute the cell, click the
+<code>Execute Cell</code> button or press <code>Ctrl+Alt+Enter</code>.
+The output is printed directly below the cell.</p>
+<p align="center">
+<img alt="VSCode Jupyter Notebook Code Cell" src="fig/0_VSCode_jupyter_notebook_code_cell.png" width="300" class="figure"></p>
+<p>Congratulations! You just ran your first Python command in a Jupyter
+notebook!</p>
+</div>
 <div class="section level3">
 <h3 id="menu-bar">Menu Bar<a class="anchor" aria-label="anchor" href="#menu-bar"></a></h3>
-<p>The Menu Bar at the top of JupyterLab has the top-level menus that
-expose various actions available in JupyterLab along with their keyboard
-shortcuts (where applicable). The following menus are included by
-default.</p>
+<p>The VSCode Menu Bar has the top-level menus that expose various
+actions for file options and editor configuration which are useful
+independent of the language you are working with. In many cases those
+commands also come with pre-defined keyboard shortcuts indicated on the
+right side of the option field. A short overview of VSCode menus</p>
 <ul><li>
 <strong>File:</strong> Actions related to files and directories such
-as <em>New</em>, <em>Open</em>, <em>Close</em>, <em>Save</em>, etc. The
-<em>File</em> menu also includes the <em>Shut Down</em> action used to
-shutdown the JupyterLab server.</li>
+as <em>New</em>, <em>Open</em>, <em>Close</em>, <em>Save</em>, etc. as
+well as general editor settings and preferences.</li>
 <li>
 <strong>Edit:</strong> Actions related to editing documents and
 other activities such as <em>Undo</em>, <em>Cut</em>, <em>Copy</em>,
 <em>Paste</em>, etc.</li>
 <li>
 <strong>View:</strong> Actions that alter the appearance of
-JupyterLab.</li>
+VSCode.</li>
 <li>
 <strong>Run:</strong> Actions for running code in different
 activities such as notebooks and code consoles (discussed below).</li>
 <li>
-<strong>Kernel:</strong> Actions for managing kernels. Kernels in
-Jupyter will be explained in more detail below.</li>
-<li>
-<strong>Tabs:</strong> A list of the open documents and activities
-in the main work area.</li>
-<li>
-<strong>Settings:</strong> Common JupyterLab settings can be
-configured using this menu. There is also an <em>Advanced Settings
-Editor</em> option in the dropdown menu that provides more fine-grained
-control of JupyterLab settings and configuration options.</li>
-<li>
-<strong>Help:</strong> A list of JupyterLab and kernel help
-links.</li>
+<strong>Help:</strong> A list of VSCode help links.</li>
 </ul><div id="kernels" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
@@ -670,80 +608,21 @@ links.</li>
 <div id="kernels" class="callout-inner">
 <h3 class="callout-title">Kernels</h3>
 <div class="callout-content">
-<p>The JupyterLab <a href="https://jupyterlab.readthedocs.io/en/stable/user/documents_kernels.html" class="external-link">docs</a>
-define kernels as “separate processes started by the server that runs
-your code in different programming languages and environments.” When we
-open a Jupyter Notebook, that starts a kernel - a process - that is
-going to run the code. In this lesson, we’ll be using the Jupyter
-ipython kernel which lets us run Python 3 code interactively.</p>
-<p>Using other Jupyter <a href="https://github.com/jupyter/jupyter/wiki/Jupyter-kernels" class="external-link">kernels
+<p>To run code in the Jupyter notebook it is necessary to select a
+kernel. Here we used the Python environment we set up earliet. In
+general Jupyter <a href="https://jupyterlab.readthedocs.io/en/stable/user/documents_kernels.html" class="external-link">docs</a>
+define kernels as “separate processes started by the Jupyter server that
+runs your code in different programming languages and environments.” So
+when we assign the Python interpeter as kernel, that starts a kernel - a
+process - that is going to run the code. The kernel is not necessarily a
+Python process, but exist in for a number of languages. Using other
+Jupyter <a href="https://github.com/jupyter/jupyter/wiki/Jupyter-kernels" class="external-link">kernels
 for other programming languages</a> would let us write and execute code
-in other programming languages in the same JupyterLab interface, like R,
-Java, Julia, Ruby, JavaScript, Fortran, etc.</p>
+in other programming languages in the same interface, like R, Java,
+Julia, Ruby, JavaScript, Fortran, etc.</p>
 </div>
 </div>
 </div>
-<p>A screenshot of the default Menu Bar is provided below.</p>
-<p align="center">
-<img alt="JupyterLab Menu Bar" src="fig/0_jupyterlab_menu_bar.png" width="750" class="figure"></p>
-</div>
-<div class="section level3">
-<h3 id="left-sidebar">Left Sidebar<a class="anchor" aria-label="anchor" href="#left-sidebar"></a></h3>
-<p>The left sidebar contains a number of commonly used tabs, such as a
-file browser (showing the contents of the directory where the JupyterLab
-server was launched), a list of running kernels and terminals, the
-command palette, and a list of open tabs in the main work area. A
-screenshot of the default Left Side Bar is provided below.</p>
-<p align="center">
-<img alt="JupyterLab Left Side Bar" src="fig/0_jupyterlab_left_side_bar.png" width="250" class="figure"></p>
-<p>The left sidebar can be collapsed or expanded by selecting “Show Left
-Sidebar” in the View menu or by clicking on the active sidebar tab.</p>
-</div>
-<div class="section level3">
-<h3 id="main-work-area">Main Work Area<a class="anchor" aria-label="anchor" href="#main-work-area"></a></h3>
-<p>The main work area in JupyterLab enables you to arrange documents
-(notebooks, text files, etc.) and other activities (terminals, code
-consoles, etc.) into panels of tabs that can be resized or subdivided. A
-screenshot of the default Main Work Area is provided below.</p>
-<p>If you do not see the Launcher tab, click the blue plus sign under
-the “File” and “Edit” menus and it will appear.</p>
-<p align="center">
-<img alt="JupyterLab Main Work Area" src="fig/0_jupyterlab_main_work_area.png" width="750" class="figure"></p>
-<p>Drag a tab to the center of a tab panel to move the tab to the panel.
-Subdivide a tab panel by dragging a tab to the left, right, top, or
-bottom of the panel. The work area has a single current activity. The
-tab for the current activity is marked with a colored top border (blue
-by default).</p>
-</div>
-</section><section><h2 class="section-heading" id="creating-a-python-script">Creating a Python script<a class="anchor" aria-label="anchor" href="#creating-a-python-script"></a></h2>
-<hr class="half-width"><ul><li>To start writing a new Python program click the Text File icon under
-the <em>Other</em> header in the Launcher tab of the Main Work Area.
-<ul><li>You can also create a new plain text file by selecting the <em>New
--&gt; Text File</em> from the <em>File</em> menu in the Menu Bar.</li>
-</ul></li>
-<li>To convert this plain text file to a Python program, select the
-<em>Save File As</em> action from the <em>File</em> menu in the Menu Bar
-and give your new text file a name that ends with the <code>.py</code>
-extension.
-<ul><li>The <code>.py</code> extension lets everyone (including the
-operating system) know that this text file is a Python program.</li>
-<li>This is convention, not a requirement.</li>
-</ul></li>
-</ul></section><section><h2 class="section-heading" id="creating-a-jupyter-notebook">Creating a Jupyter Notebook<a class="anchor" aria-label="anchor" href="#creating-a-jupyter-notebook"></a></h2>
-<hr class="half-width"><p>To open a new notebook click the Python 3 icon under the
-<em>Notebook</em> header in the Launcher tab in the main work area. You
-can also create a new notebook by selecting <em>New -&gt; Notebook</em>
-from the <em>File</em> menu in the Menu Bar.</p>
-<p>Additional notes on Jupyter notebooks.</p>
-<ul><li>Notebook files have the extension <code>.ipynb</code> to distinguish
-them from plain-text Python programs.</li>
-<li>Notebooks can be exported as Python scripts that can be run from the
-command line.</li>
-</ul><p>Below is a screenshot of a Jupyter notebook running inside
-JupyterLab. If you are interested in more details, then see the <a href="https://jupyterlab.readthedocs.io/en/stable/user/notebook.html" class="external-link">official
-notebook documentation</a>.</p>
-<p align="center">
-<img alt="Example Jupyter Notebook" src="fig/0_jupyterlab_notebook_screenshot.png" width="750" class="figure"></p>
 <div id="how-its-stored" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
@@ -760,43 +639,6 @@ all in one file.</li>
 </ul></div>
 </div>
 </div>
-<div id="arranging-documents-into-panels-of-tabs" class="callout challenge">
-<div class="callout-square">
-<i class="callout-icon" data-feather="zap"></i>
-</div>
-<span class="callout-header">Challenge</span>
-<div id="arranging-documents-into-panels-of-tabs" class="callout-inner">
-<h3 class="callout-title">Arranging Documents into Panels of Tabs</h3>
-<div class="callout-content">
-<p>In the JupyterLab Main Work Area you can arrange documents into
-panels of tabs. Here is an example from the <a href="https://jupyterlab.readthedocs.io/en/stable/" class="external-link">official
-documentation</a>.</p>
-<p align="center">
-<img alt="Multi-panel JupyterLab" src="fig/0_multipanel_jupyterlab_screenshot.png" width="750" class="figure"></p>
-<p>First, create a text file, Python console, and terminal window and
-arrange them into three panels in the main work area. Next, create a
-notebook, terminal window, and text file and arrange them into three
-panels in the main work area. Finally, create your own combination of
-panels and tabs. What combination of panels and tabs do you think will
-be most useful for your workflow?</p>
-</div>
-</div>
-</div>
-<div id="accordionSolution1" class="accordion challenge-accordion accordion-flush">
-<div class="accordion-item">
-<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
-  <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
-</button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
-<div class="accordion-body">
-<p>After creating the necessary tabs, you can drag one of the tabs to
-the center of a panel to move the tab to the panel; next you can
-subdivide a tab panel by dragging a tab to the left, right, top, or
-bottom of the panel.</p>
-</div>
-</div>
-</div>
-</div>
 <div id="code-vs.-text" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
@@ -805,19 +647,21 @@ bottom of the panel.</p>
 <div id="code-vs.-text" class="callout-inner">
 <h3 class="callout-title">Code vs. Text</h3>
 <div class="callout-content">
-<p>Jupyter mixes code and text in different types of blocks, called
-cells. We often use the term “code” to mean “the source code of software
-written in a language such as Python”. A “code cell” in a Notebook is a
-cell that contains software; a “text cell” is one that contains ordinary
-prose written for human beings.</p>
+<p>Jupyter notebooks mix code and text in different types of blocks,
+called cells. We often use the term “code” to mean “the source code of
+software written in a language such as Python”. A “code cell” in a
+Notebook is a cell that contains software; a “text cell” is one that
+contains ordinary prose written for human beings.</p>
+</div>
 </div>
 </div>
 </div>
 </section><section><h2 class="section-heading" id="the-notebook-has-command-and-edit-modes-">The Notebook has Command and Edit modes.<a class="anchor" aria-label="anchor" href="#the-notebook-has-command-and-edit-modes-"></a></h2>
 <hr class="half-width"><ul><li>If you press <kbd>Esc</kbd> and <kbd>Return</kbd> alternately, the
-outer border of your code cell will change from gray to blue.</li>
-<li>These are the <strong>Command</strong> (gray) and
-<strong>Edit</strong> (blue) modes of your notebook.</li>
+outer border of your code cell will change from highlighting the cell
+itself to highlighting the cell content.</li>
+<li>These are the <strong>Command</strong> (cell) and
+<strong>Edit</strong> (content) modes of your notebook.</li>
 <li>Command mode allows you to edit notebook-level features, and Edit
 mode changes the content of cells.</li>
 <li>When in Command mode (esc/gray),
@@ -830,41 +674,7 @@ be a deletion, creation, etc).</li>
 </ul></li>
 <li>All actions can be done using the menus, but there are lots of
 keyboard shortcuts to speed things up.</li>
-</ul><div id="command-vs.-edit" class="callout challenge">
-<div class="callout-square">
-<i class="callout-icon" data-feather="zap"></i>
-</div>
-<span class="callout-header">Challenge</span>
-<div id="command-vs.-edit" class="callout-inner">
-<h3 class="callout-title">Command Vs. Edit</h3>
-<div class="callout-content">
-<p>In the Jupyter notebook page are you currently in Command or Edit
-mode?<br>
-Switch between the modes. Use the shortcuts to generate a new cell. Use
-the shortcuts to delete a cell. Use the shortcuts to undo the last cell
-operation you performed.</p>
-</div>
-</div>
-</div>
-<div id="accordionSolution2" class="accordion challenge-accordion accordion-flush">
-<div class="accordion-item">
-<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
-  <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
-</button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
-<div class="accordion-body">
-<p>Command mode has a grey border and Edit mode has a blue border. Use
-<kbd>Esc</kbd> and <kbd>Return</kbd> to switch between modes. You need
-to be in Command mode (Press <kbd>Esc</kbd> if your cell is blue). Type
-<kbd>b</kbd> or <kbd>a</kbd>. You need to be in Command mode (Press
-<kbd>Esc</kbd> if your cell is blue). Type <kbd>x</kbd>. You need to be
-in Command mode (Press <kbd>Esc</kbd> if your cell is blue). Type
-<kbd>z</kbd>.</p>
-</div>
-</div>
-</div>
-</div>
-<div class="section level3">
+</ul><div class="section level3">
 <h3 id="use-the-keyboard-and-mouse-to-select-and-edit-cells-">Use the keyboard and mouse to select and edit cells.<a class="anchor" aria-label="anchor" href="#use-the-keyboard-and-mouse-to-select-and-edit-cells-"></a></h3>
 <ul><li>Pressing the <kbd>Return</kbd> key turns the border blue and engages
 Edit mode, which allows you to type within the cell.</li>
@@ -1006,12 +816,12 @@ this:</p>
 </ol></div>
 </div>
 </div>
-<div id="accordionSolution3" class="accordion challenge-accordion accordion-flush">
+<div id="accordionSolution1" class="accordion challenge-accordion accordion-flush">
 <div class="accordion-item">
-<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
-  <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
+  <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <p>This challenge integrates both the numbered list and bullet list.
 Note that the bullet list is indented 2 spaces so that it is inline with
@@ -1038,27 +848,27 @@ the items of the numbered list.</p>
 <p>What is displayed when a Python cell in a notebook that contains
 several calculations is executed? For example, what happens when this
 cell is executed?</p>
-<div class="codewrapper sourceCode" id="cb11">
+<div class="codewrapper sourceCode" id="cb9">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a><span class="dv">7</span> <span class="op">*</span> <span class="dv">3</span></span>
-<span id="cb11-2"><a href="#cb11-2" tabindex="-1"></a><span class="dv">2</span> <span class="op">+</span> <span class="dv">1</span></span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a><span class="dv">7</span> <span class="op">*</span> <span class="dv">3</span></span>
+<span id="cb9-2"><a href="#cb9-2" tabindex="-1"></a><span class="dv">2</span> <span class="op">+</span> <span class="dv">1</span></span></code></pre>
 </div>
 </div>
 </div>
 </div>
-<div id="accordionSolution4" class="accordion challenge-accordion accordion-flush">
+<div id="accordionSolution2" class="accordion challenge-accordion accordion-flush">
 <div class="accordion-item">
-<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution4" aria-expanded="false" aria-controls="collapseSolution4">
-  <h4 class="accordion-header" id="headingSolution4"> Show me the solution </h4>
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
+  <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <p>Python returns the output of the last calculation.</p>
-<div class="codewrapper sourceCode" id="cb12">
+<div class="codewrapper sourceCode" id="cb10">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" tabindex="-1"></a><span class="dv">3</span></span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a><span class="dv">3</span></span></code></pre>
 </div>
 </div>
 </div>
@@ -1076,11 +886,11 @@ Markdown</h3>
 <p>What happens if you write some Python in a code cell and then you
 switch it to a Markdown cell? For example, put the following in a code
 cell:</p>
-<div class="codewrapper sourceCode" id="cb13">
+<div class="codewrapper sourceCode" id="cb11">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" tabindex="-1"></a>x <span class="op">=</span> <span class="dv">6</span> <span class="op">*</span> <span class="dv">7</span> <span class="op">+</span> <span class="dv">12</span></span>
-<span id="cb13-2"><a href="#cb13-2" tabindex="-1"></a><span class="bu">print</span>(x)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a>x <span class="op">=</span> <span class="dv">6</span> <span class="op">*</span> <span class="dv">7</span> <span class="op">+</span> <span class="dv">12</span></span>
+<span id="cb11-2"><a href="#cb11-2" tabindex="-1"></a><span class="bu">print</span>(x)</span></code></pre>
 </div>
 <p>And then run it with <kbd>Shift</kbd>+<kbd>Return</kbd> to be sure
 that it works as a code cell. Now go back to the cell and use
@@ -1090,21 +900,21 @@ might this be useful?</p>
 </div>
 </div>
 </div>
-<div id="accordionSolution5" class="accordion challenge-accordion accordion-flush">
+<div id="accordionSolution3" class="accordion challenge-accordion accordion-flush">
 <div class="accordion-item">
-<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution5" aria-expanded="false" aria-controls="collapseSolution5">
-  <h4 class="accordion-header" id="headingSolution5"> Show me the solution </h4>
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
+  <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
 </button>
-<div id="collapseSolution5" class="accordion-collapse collapse" data-bs-parent="#accordionSolution5" aria-labelledby="headingSolution5">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 <p>The Python code gets treated like Markdown text. The lines appear as
 if they are part of one contiguous paragraph. This could be useful to
 temporarily turn on and off cells in notebooks that get used for
 multiple purposes.</p>
-<div class="codewrapper sourceCode" id="cb14">
+<div class="codewrapper sourceCode" id="cb12">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" tabindex="-1"></a>x <span class="op">=</span> <span class="dv">6</span> <span class="op">*</span> <span class="dv">7</span> <span class="op">+</span> <span class="dv">12</span> <span class="bu">print</span>(x)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" tabindex="-1"></a>x <span class="op">=</span> <span class="dv">6</span> <span class="op">*</span> <span class="dv">7</span> <span class="op">+</span> <span class="dv">12</span> <span class="bu">print</span>(x)</span></code></pre>
 </div>
 </div>
 </div>
@@ -1128,12 +938,12 @@ and dollar sign, <code>$</code>, do?</p>
 </div>
 </div>
 </div>
-<div id="accordionSolution6" class="accordion challenge-accordion accordion-flush">
+<div id="accordionSolution4" class="accordion challenge-accordion accordion-flush">
 <div class="accordion-item">
-<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution6" aria-expanded="false" aria-controls="collapseSolution6">
-  <h4 class="accordion-header" id="headingSolution6"> Show me the solution </h4>
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution4" aria-expanded="false" aria-controls="collapseSolution4">
+  <h4 class="accordion-header" id="headingSolution4"> Show me the solution </h4>
 </button>
-<div id="collapseSolution6" class="accordion-collapse collapse" data-bs-parent="#accordionSolution6" aria-labelledby="headingSolution6">
+<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
 <div class="accordion-body">
 <p>The notebook shows the equation as it would be rendered from LaTeX
 equation syntax. The dollar sign, <code>$</code>, is used to tell
@@ -1147,27 +957,6 @@ is in curly braces to make the whole statement the superscript for
 <code>2</code>. <code>\sum</code> and <code>\approx</code> are LaTeX
 commands for “sum over” and “approximate” symbols.</p>
 </div>
-</div>
-</div>
-</div>
-</div>
-</section><section><h2 class="section-heading" id="closing-jupyterlab">Closing JupyterLab<a class="anchor" aria-label="anchor" href="#closing-jupyterlab"></a></h2>
-<hr class="half-width"><ul><li>From the Menu Bar select the “File” menu and then choose “Shut Down”
-at the bottom of the dropdown menu. You will be prompted to confirm that
-you wish to shutdown the JupyterLab server (don’t forget to save your
-work!). Click “Shut Down” to shutdown the JupyterLab server.</li>
-<li>To restart the JupyterLab server you will need to re-run the
-following command from a shell.</li>
-</ul><pre><code>$ jupyter lab</code></pre>
-<div id="closing-jupyterlab-1" class="callout discussion">
-<div class="callout-square">
-<i class="callout-icon" data-feather="message-circle"></i>
-</div>
-<span class="callout-header">Discussion</span>
-<div id="closing-jupyterlab-1" class="callout-inner">
-<h3 class="callout-title">Closing JupyterLab</h3>
-<div class="callout-content">
-<p>Practice closing and restarting the JupyterLab server.</p>
 </div>
 </div>
 </div>
@@ -1186,6 +975,7 @@ following command from a shell.</li>
 documentation.</li>
 <li>Markdown does most of what HTML does.</li>
 </ul></div>
+</div>
 </div>
 </div>
 </section></div> <!-- / div.lesson-content -->
@@ -1246,8 +1036,8 @@ documentation.</li>
   "url": "https://swcarpentry.github.io/python-novice-gapminder/01-run-quit.html",
   "identifier": "https://swcarpentry.github.io/python-novice-gapminder/01-run-quit.html",
   "dateCreated": "2016-01-07",
-  "dateModified": "2025-11-21",
-  "datePublished": "2025-11-25"
+  "dateModified": "2025-11-27",
+  "datePublished": "2025-11-27"
 }
 
   </script><script>
