@@ -9,7 +9,7 @@ title: 'Reference'
 - Python files have the `.py` extension.
 - Can be written in a text file or a [Jupyter Notebook][jupyter].
   - Jupyter notebooks have the extension `.ipynb`
-  - Jupyter notebooks can be opened from [Anaconda](https://docs.continuum.io/anaconda/install) or through the command line by entering `$ jupyter notebook`
+  - Jupyter notebooks can be opened from [VSCode](https://code.visualstudio.com/)
     - Markdown and HTML are allowed in markdown cells for documenting code.
 
 ## [Variables and Assignment](episodes/02-variables.md)
