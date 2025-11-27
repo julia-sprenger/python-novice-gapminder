@@ -75,7 +75,7 @@ print(last_name)
 ```error
 ---------------------------------------------------------------------------
 NameError                                 Traceback (most recent call last)
-<ipython-input-1-c1fbb4e96102> in <module>()
+Cell In[2], line 1
 ----> 1 print(last_name)
 
 NameError: name 'last_name' is not defined
@@ -103,8 +103,7 @@ myval = 1
 ```
 
 If you execute this in order, the first cell will give an error. However, if you run the first cell *after* the second
-cell it will print out `1`. To prevent confusion, it can be helpful to use the `Kernel` -> `Restart & Run All` option which
-clears the interpreter and runs everything from a clean slate going top to bottom.
+cell it will print out `1`. To prevent confusion, it can be helpful to use the `Restart` and `Run All` options which clears the kernel and runs everything from a clean slate going top to bottom.
 
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
@@ -130,7 +129,7 @@ Age in three years: 45
   this ordering, we can treat the string as a list of characters.
 - Each position in the string (first, second, etc.) is given a number. This
   number is called an **index** or sometimes a subscript.
-- Indices are numbered from 0.
+- **Indices are numbered from 0.**
 - Use the position's index in square brackets to get the character at that
   position.
 

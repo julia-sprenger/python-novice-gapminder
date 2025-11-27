@@ -93,7 +93,7 @@ The VSCode Menu Bar has the top-level menus that expose various actions for file
 To run code in the Jupyter notebook it is necessary to select a kernel. Here we used the Python environment we set up earliet. In general Jupyter [docs](https://jupyterlab.readthedocs.io/en/stable/user/documents_kernels.html)
 define kernels as "separate processes started by the Jupyter server that runs your code in different programming languages and environments."
 So when we assign the Python interpeter as kernel, that starts a kernel - a process - that is going to run the code. The kernel is not necessarily a Python process, but exist in for a number of languages. Using other Jupyter [kernels for other programming languages](https://github.com/jupyter/jupyter/wiki/Jupyter-kernels) would let us
-write and execute code in other programming languages in the same JupyterLab interface, like R, Java, Julia, Ruby, JavaScript, Fortran, etc.
+write and execute code in other programming languages in the same interface, like R, Java, Julia, Ruby, JavaScript, Fortran, etc.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 

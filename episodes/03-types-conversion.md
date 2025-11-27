@@ -70,7 +70,7 @@ print('hello' - 'h')
 ```error
 ---------------------------------------------------------------------------
 TypeError                                 Traceback (most recent call last)
-<ipython-input-2-67f5626a1e07> in <module>()
+Cell In[2], line 1
 ----> 1 print('hello' - 'h')
 
 TypeError: unsupported operand type(s) for -: 'str' and 'str'
@@ -122,7 +122,7 @@ print(len(52))
 ```error
 ---------------------------------------------------------------------------
 TypeError                                 Traceback (most recent call last)
-<ipython-input-3-f769e8e8097d> in <module>()
+Cell In[2], line 1
 ----> 1 print(len(52))
 
 TypeError: object of type 'int' has no len()
@@ -139,7 +139,7 @@ print(1 + '2')
 ```error
 ---------------------------------------------------------------------------
 TypeError                                 Traceback (most recent call last)
-<ipython-input-4-fe4f54a023c6> in <module>()
+Cell In[2], line 1
 ----> 1 print(1 + '2')
 
 TypeError: unsupported operand type(s) for +: 'int' and 'str'
@@ -357,7 +357,7 @@ print("string to float:", float("Hello world!"))
 ```error
 ---------------------------------------------------------------------------
 ValueError                                Traceback (most recent call last)
-<ipython-input-5-df3b790bf0a2> in <module>
+Cell In[2], line 1
 ----> 1 print("string to float:", float("Hello world!"))
 
 ValueError: could not convert string to float: 'Hello world!'
@@ -388,7 +388,7 @@ int("3.4")
 ```output
 ---------------------------------------------------------------------------
 ValueError                                Traceback (most recent call last)
-<ipython-input-2-ec6729dfccdc> in <module>
+Cell In[2], line 1
 ----> 1 int("3.4")
 ValueError: invalid literal for int() with base 10: '3.4'
 ```

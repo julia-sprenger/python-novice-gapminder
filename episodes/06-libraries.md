@@ -432,7 +432,7 @@ log(0)
 ```output
 ---------------------------------------------------------------------------
 ValueError                                Traceback (most recent call last)
-<ipython-input-1-d72e1d780bab> in <module>
+Cell In[9], line 2
       1 from math import log
 ----> 2 log(0)
 

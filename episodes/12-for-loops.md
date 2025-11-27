@@ -83,7 +83,7 @@ firstName = "Jon"
 ```
 
 ```error
-  File "<ipython-input-7-f65f2962bf9c>", line 2
+Cell In[2], line 1, line 2
     lastName = "Smith"
     ^
 IndentationError: unexpected indent
