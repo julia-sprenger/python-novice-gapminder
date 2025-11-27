@@ -96,7 +96,7 @@ Read the traceback below, and identify the following:
 ```error
 ---------------------------------------------------------------------------
 KeyError                                  Traceback (most recent call last)
-<ipython-input-2-e4c4cbafeeb5> in <module>()
+Cell In[2], line 1
       1 import errors_02
 ----> 2 errors_02.print_friday_message()
 

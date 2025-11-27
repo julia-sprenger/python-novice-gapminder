@@ -98,7 +98,7 @@ print(max(1, 'a'))
 
 ```error
 TypeError                                 Traceback (most recent call last)
-<ipython-input-52-3f049acf3762> in <module>
+Cell In[4], line 1
 ----> 1 print(max(1, 'a'))
 
 TypeError: '>' not supported between instances of 'str' and 'int'
@@ -183,12 +183,9 @@ round(number, ndigits=None)
     the return value has the same type as the number.  ndigits may be negative.
 ```
 
-## The Jupyter Notebook has two ways to get help.
+## How to get more help.
 
-- Option 1: Place the cursor near where the function is invoked in a cell
-  (i.e., the function name or its parameters),
-  - Hold down <kbd>Shift</kbd>, and press <kbd>Tab</kbd>.
-  - Do this several times to expand the information returned.
+- Option 1: Hover over the function name in a cell. VSCode will open an information panel providing details on the pop-up window
 - Option 2: Type the function name in a cell with a question mark after it. Then run the cell.
 
 ## Python reports a syntax error when it can't understand the source of a program.
@@ -201,10 +198,10 @@ name = 'Feng
 ```
 
 ```error
-  File "<ipython-input-56-f42768451d55>", line 2
+  Cell In[8], line 1
     name = 'Feng
-                ^
-SyntaxError: EOL while scanning string literal
+           ^
+SyntaxError: unterminated string literal (detected at line 1)
 ```
 
 ```python
@@ -213,10 +210,10 @@ age = = 52
 ```
 
 ```error
-  File "<ipython-input-57-ccc3df3cf902>", line 2
-    age = = 52
-          ^
-SyntaxError: invalid syntax
+  Cell In[5], line 1
+    name = 'Feng
+           ^
+SyntaxError: unterminated string literal (detected at line 1)
 ```
 
 - Look more closely at the error message:
@@ -226,16 +223,13 @@ print("hello world"
 ```
 
 ```error
-  File "<ipython-input-6-d1cc229bf815>", line 1
-    print ("hello world"
-                        ^
-SyntaxError: unexpected EOF while parsing
+  Cell In[6], line 1
+    print("hello world"
+                       ^
+SyntaxError: incomplete input
 ```
 
 - The message indicates a problem on first line of the input ("line 1").
-  - In this case the "ipython-input" section of the file name tells us that
-    we are working with input into IPython,
-    the Python interpreter used by the Jupyter Notebook.
 - The `-6-` part of the filename indicates that
   the error occurred in cell 6 of our Notebook.
 - Next is the problematic line of code,
@@ -250,7 +244,7 @@ remaining = 100 - aege # mis-spelled 'age'
 
 ```error
 NameError                                 Traceback (most recent call last)
-<ipython-input-59-1214fb6c55fc> in <module>
+Cell In[3], line 2
       1 age = 53
 ----> 2 remaining = 100 - aege # mis-spelled 'age'
 
@@ -288,6 +282,12 @@ This is a fast-moving technology.
 If you are preparing to teach this section and you feel it has become outdated, please open an issue on the lesson repository to let the Maintainers know and/or a pull request to suggest updates and improvements.
 
 ::::::::::::::::::::::::::::::::::::::::
+
+:::::::::::::::::::::: callout
+
+When using generative AI at the OECD, make sure to follow the [Staff Guidelines on the Use of Generative Artificial Intelligence](https://portal.oecd.org/eshare/pac/kc/Communicatiohttps://oecd.ai/en/ai-principlesns/Comms%20preparation/External%20Communication/Updated_Generative_AI_Staff_Guidelines_ENG.pdf).
+
+::::::::::::::::::::::::::::::
 
 It is increasingly common for people to use _generative AI_ chatbots such as ChatGPT to get help while coding. 
 You will probably receive some useful guidance by presenting your error message to the chatbot and asking it what went wrong. 
@@ -399,7 +399,7 @@ as we discussed earlier a string and integer cannot meaningfully be compared.
 
 ```error 
 TypeError                                 Traceback (most recent call last)
-<ipython-input-65-bc82ad05177a> in <module>
+Cell In[7], line 1
 ----> 1 max(len(rich), poor)
 
 TypeError: '>' not supported between instances of 'str' and 'int'
