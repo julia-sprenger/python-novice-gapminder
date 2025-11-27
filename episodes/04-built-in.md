@@ -283,6 +283,12 @@ If you are preparing to teach this section and you feel it has become outdated, 
 
 ::::::::::::::::::::::::::::::::::::::::
 
+:::::::::::::::::::::: callout
+
+When using generative AI at the OECD, make sure to follow the [Staff Guidelines on the Use of Generative Artificial Intelligence](https://portal.oecd.org/eshare/pac/kc/Communicatiohttps://oecd.ai/en/ai-principlesns/Comms%20preparation/External%20Communication/Updated_Generative_AI_Staff_Guidelines_ENG.pdf).
+
+::::::::::::::::::::::::::::::
+
 It is increasingly common for people to use _generative AI_ chatbots such as ChatGPT to get help while coding. 
 You will probably receive some useful guidance by presenting your error message to the chatbot and asking it what went wrong. 
 However, the way this help is provided by the chatbot is different. 
