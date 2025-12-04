@@ -29,5 +29,5 @@
 "learners/discuss.md" "012b885b35283c528857acd0fde06604" "site/built/discuss.md" "2025-11-21"
 "learners/exercises.md" "8f305efe9f670305e9d23140d43ca651" "site/built/exercises.md" "2025-11-21"
 "learners/reference.md" "66dc196820e8d31abdfb6e75c27a995a" "site/built/reference.md" "2025-11-27"
-"learners/setup.md" "e66286ca34aef0db28e0c89df9459201" "site/built/setup.md" "2025-11-27"
+"learners/setup.md" "80625557d6879fc9a4744bc1fbeb2478" "site/built/setup.md" "2025-12-04"
 "profiles/learner-profiles.md" "e11c7a838ed94e9d74cb8a9402adfd92" "site/built/learner-profiles.md" "2025-11-21"
